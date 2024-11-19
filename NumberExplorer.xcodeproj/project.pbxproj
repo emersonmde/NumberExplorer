@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		3458F1982CEBB03F004655F7 /* NumberExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3458F1972CEBB03F004655F7 /* NumberExplorerApp.swift */; };
 		3458F19A2CEBB03F004655F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3458F1992CEBB03F004655F7 /* ContentView.swift */; };
-		3458F19C2CEBB03F004655F7 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3458F19B2CEBB03F004655F7 /* Item.swift */; };
 		3458F19E2CEBB03F004655F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3458F19D2CEBB03F004655F7 /* Assets.xcassets */; };
 		3458F1A12CEBB03F004655F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3458F1A02CEBB03F004655F7 /* Preview Assets.xcassets */; };
 		3458F1AB2CEBB03F004655F7 /* NumberExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3458F1AA2CEBB03F004655F7 /* NumberExplorerTests.swift */; };
 		3458F1B52CEBB03F004655F7 /* NumberExplorerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3458F1B42CEBB03F004655F7 /* NumberExplorerUITests.swift */; };
 		3458F1B72CEBB03F004655F7 /* NumberExplorerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3458F1B62CEBB03F004655F7 /* NumberExplorerUITestsLaunchTests.swift */; };
+		3458F1C72CEBB0EF004655F7 /* NumberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3458F1C62CEBB0EF004655F7 /* NumberData.swift */; };
+		3458F1C92CEBB0FF004655F7 /* NumberLearningViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3458F1C82CEBB0FF004655F7 /* NumberLearningViewModel.swift */; };
+		3458F1CB2CEBB10C004655F7 /* NumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3458F1CA2CEBB10C004655F7 /* NumberCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +40,6 @@
 		3458F1942CEBB03F004655F7 /* NumberExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NumberExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3458F1972CEBB03F004655F7 /* NumberExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberExplorerApp.swift; sourceTree = "<group>"; };
 		3458F1992CEBB03F004655F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		3458F19B2CEBB03F004655F7 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		3458F19D2CEBB03F004655F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3458F1A02CEBB03F004655F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3458F1A62CEBB03F004655F7 /* NumberExplorerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NumberExplorerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +47,9 @@
 		3458F1B02CEBB03F004655F7 /* NumberExplorerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NumberExplorerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3458F1B42CEBB03F004655F7 /* NumberExplorerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberExplorerUITests.swift; sourceTree = "<group>"; };
 		3458F1B62CEBB03F004655F7 /* NumberExplorerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberExplorerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3458F1C62CEBB0EF004655F7 /* NumberData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberData.swift; sourceTree = "<group>"; };
+		3458F1C82CEBB0FF004655F7 /* NumberLearningViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberLearningViewModel.swift; sourceTree = "<group>"; };
+		3458F1CA2CEBB10C004655F7 /* NumberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,9 +100,11 @@
 		3458F1962CEBB03F004655F7 /* NumberExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				3458F1C52CEBB0CD004655F7 /* ViewModels */,
+				3458F1C42CEBB0C6004655F7 /* Views */,
+				3458F1C32CEBB0BE004655F7 /* Models */,
 				3458F1972CEBB03F004655F7 /* NumberExplorerApp.swift */,
 				3458F1992CEBB03F004655F7 /* ContentView.swift */,
-				3458F19B2CEBB03F004655F7 /* Item.swift */,
 				3458F19D2CEBB03F004655F7 /* Assets.xcassets */,
 				3458F19F2CEBB03F004655F7 /* Preview Content */,
 			);
@@ -128,6 +134,30 @@
 				3458F1B62CEBB03F004655F7 /* NumberExplorerUITestsLaunchTests.swift */,
 			);
 			path = NumberExplorerUITests;
+			sourceTree = "<group>";
+		};
+		3458F1C32CEBB0BE004655F7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3458F1C62CEBB0EF004655F7 /* NumberData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3458F1C42CEBB0C6004655F7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3458F1CA2CEBB10C004655F7 /* NumberCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3458F1C52CEBB0CD004655F7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3458F1C82CEBB0FF004655F7 /* NumberLearningViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,8 +291,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3458F19A2CEBB03F004655F7 /* ContentView.swift in Sources */,
-				3458F19C2CEBB03F004655F7 /* Item.swift in Sources */,
+				3458F1C92CEBB0FF004655F7 /* NumberLearningViewModel.swift in Sources */,
 				3458F1982CEBB03F004655F7 /* NumberExplorerApp.swift in Sources */,
+				3458F1C72CEBB0EF004655F7 /* NumberData.swift in Sources */,
+				3458F1CB2CEBB10C004655F7 /* NumberCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,8 +458,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NumberExplorer/Preview Content\"";
+				DEVELOPMENT_TEAM = 7542Q96HNF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to the microphone to hear your number pronunciation";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "This app needs access to speech recognition to check your number pronunciation";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -454,8 +489,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NumberExplorer/Preview Content\"";
+				DEVELOPMENT_TEAM = 7542Q96HNF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to the microphone to hear your number pronunciation";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "This app needs access to speech recognition to check your number pronunciation";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

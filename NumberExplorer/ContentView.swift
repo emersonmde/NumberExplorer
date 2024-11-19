@@ -1,61 +1,61 @@
-//
-//  ContentView.swift
-//  NumberExplorer
-//
-//  Created by Matthew Emerson on 11/18/24.
-//
-
 import SwiftUI
-import SwiftData
+
+enum LearningMode: String, CaseIterable, Identifiable {
+    case englishSpeaking = "English"
+    case chineseSpeaking = "Chinese"
+    
+    var id: Self { self }
+}
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
-
+    @StateObject private var viewModel = NumberLearningViewModel()
+    
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
-                }
-                .onDelete(perform: deleteItems)
+        VStack {
+            modePicker
+            numberGrid
+            startButton
+        }
+        .padding()
+        .navigationTitle("Learn Numbers")
+    }
+    
+    private var modePicker: some View {
+        Picker("Mode", selection: $viewModel.currentMode) {
+            ForEach(LearningMode.allCases, id: \.self) { mode in
+                Text(mode.rawValue).tag(mode)
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
+        }
+        .pickerStyle(SegmentedPickerStyle())
+        .padding()
+    }
+    
+    private var numberGrid: some View {
+        ScrollView {
+            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 5), spacing: 10) {
+                ForEach(viewModel.numbers.indices, id: \.self) { index in
+                    NumberCell(data: viewModel.numbers[index])
                 }
             }
-        } detail: {
-            Text("Select an item")
         }
     }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
+    
+    private var startButton: some View {
+        Button(action: {
+            viewModel.startListening()
+        }) {
+            Text(viewModel.isListening ? "Stop Listening" : "Start Listening")
+                .font(.title2)
+                .padding()
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(10)
         }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
-        }
+        .padding()
     }
 }
 
+
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
 }
